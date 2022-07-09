@@ -7,7 +7,16 @@ con = db_connect.cursor()
 
 def inseriJame(nome):
     try:
-        sql = "insert into Jamegoes(codigo, jameg) values('', '{}')".format(nome)
+        sql = "insert into Jamegoes(jameg) values('{}')".format(nome)
+        con.execute(sql)
+        db_connect.commit()
+        print("{} Inserido".format(con.rowcount))
+    except Exception as erro:
+            print(erro)
+            
+def inseriAtal(nome):
+    try:
+        sql = "insert into Atalho(atal) values('{}')".format(nome)
         con.execute(sql)
         db_connect.commit()
         print("{} Inserido".format(con.rowcount))
@@ -22,10 +31,19 @@ def consuJame(nome):
             print("Código: {}, jameg: {}".format(codigo, nome))
     except Exception as erro:
         print(erro)
-
-def atualiJame(cod, nome,novoNome):
+        
+def consuAtal(nome):
     try:
-        sql = "update Jamegoes set {} = '{}' where codigo = '{}'".format(nome, novoNome, cod)
+        sql = "select * from Atalho where jameg = '{}'".format(nome)
+        con.execute(sql)
+        for(codigo, jameg) in con:
+            print("Código: {}, jameg: {}".format(codigo, nome))
+    except Exception as erro:
+        print(erro)
+
+def atualiJame(nome,novoNome):
+    try:
+        sql = "update Jamegoes set {} = '{}' where jameg = '{}'".format(nome, novoNome)
         con.execute(sql)
         db_connect.commit()
         print('{} Atualizado!'.format(con.rowcount))
@@ -34,7 +52,7 @@ def atualiJame(cod, nome,novoNome):
 
 def excluirJame(nome):
     try:
-        sql = "delete from Jamegoes where codigo = '{}'".format(nome)
+        sql = "delete from Jamegoes where jameg = '{}'".format(nome)
         con.execute(sql)
         db_connect.commit()
         print('{} Excluido!'.format(con.rowcount))
