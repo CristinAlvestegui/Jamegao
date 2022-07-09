@@ -27,17 +27,17 @@ def consuJame(nome):
     try:
         sql = "select * from Jamegoes where jameg = '{}'".format(nome)
         con.execute(sql)
-        for(codigo, jameg) in con:
-            print("Código: {}, jameg: {}".format(codigo, nome))
+        for(jameg) in con:
+            print("jameg: {}".format(nome))
     except Exception as erro:
         print(erro)
         
 def consuAtal(nome):
     try:
-        sql = "select * from Atalho where jameg = '{}'".format(nome)
+        sql = "select * from Atalho where atal = '{}'".format(nome)
         con.execute(sql)
-        for(codigo, jameg) in con:
-            print("Código: {}, jameg: {}".format(codigo, nome))
+        for(atal) in con:
+            print("jameg: {}".format(nome))
     except Exception as erro:
         print(erro)
 
