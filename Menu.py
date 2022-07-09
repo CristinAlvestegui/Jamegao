@@ -10,10 +10,10 @@ def pegArvo():
     executar()
     
 
-def jamegarFile(jameg=atal):
-    print('Informe o nome do Jamego que deseja consultar: ')
-    jameg = input()
-    jameg.open(atal)
+#def jamegarFile(jameg=atal):
+    #print('Informe o nome do Jamego que deseja consultar: ')
+    #jameg = input()
+    #jameg.open(atal)
 
 def menu():
     print('\nEscolha umas das alternativas abaixo: \n\n' +
@@ -37,7 +37,6 @@ def executar():
             print('Informe o nome do Jamego que deseja consultar: ')
             jameg = input()
             Crud.consuJame(jameg)
-            Crud.consuAltal(atal)
         elif this.opcao == 3:
             print('Informe o nome que deseja atualizar: ')
             jameg = input()
