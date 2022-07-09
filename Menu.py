@@ -5,13 +5,15 @@ this.opcao = -1
 
 def pegArvo():
     print('Por favor informe o caminho do arquivo ou pasta')
-    arvo = input()
+    atal = input()
+    Crud.InserirAtal(atal)
     executar()
-    jamegarFile(arvo)
+    
 
-def jamegarFile(arvo):
-    jameg = Crud.inseriJame()
-    jameg.save(arvo)
+def jamegarFile(jameg=atal):
+    print('Informe o nome do Jamego que deseja consultar: ')
+    jameg = input()
+    jameg.open(atal)
 
 def menu():
     print('\nEscolha umas das alternativas abaixo: \n\n' +
@@ -32,9 +34,10 @@ def executar():
             jameg = input()
             Crud.inseriJame(jameg)
         elif this.opcao == 2:
-            print('Informe o nome ou código do Jamego que deseja consultar: ')
+            print('Informe o nome do Jamego que deseja consultar: ')
             jameg = input()
             Crud.consuJame(jameg)
+            Crud.consuAltal(atal)
         elif this.opcao == 3:
             print('Informe o nome que deseja atualizar: ')
             jameg = input()
