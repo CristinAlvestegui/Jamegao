@@ -5,7 +5,7 @@ import os
 db_connect = Dao.connection()
 con = db_connect.cursor()
 
-def inseriJame(nome):
+def inserijame(nome):
     try:
         sql = "insert into Jamegoes(jameg) values('{}')".format(nome)
         con.execute(sql)
@@ -14,7 +14,7 @@ def inseriJame(nome):
     except Exception as erro:
             print(erro)
             
-def inseriAtal(nome):
+def inseriatal(nome):
     try:
         sql = "insert into Atalho(atal) values('{}')".format(nome)
         con.execute(sql)
@@ -23,7 +23,7 @@ def inseriAtal(nome):
     except Exception as erro:
             print(erro)
 
-def consuJame(nome):
+def consujame(nome):
     try:
         sql = "select * from Jamegoes where jameg = '{}'".format(nome)
         con.execute(sql)
@@ -32,7 +32,7 @@ def consuJame(nome):
     except Exception as erro:
         print(erro)
         
-def consuAtal(nome):
+def consuatal(nome):
     try:
         sql = "select * from Atalho where atal = '{}'".format(nome)
         con.execute(sql)
@@ -41,7 +41,7 @@ def consuAtal(nome):
     except Exception as erro:
         print(erro)
 
-def atualiJame(nome,novoNome):
+def atualijame(nome,novoNome):
     try:
         sql = "update Jamegoes set {} = '{}' where jameg = '{}'".format(nome, novoNome)
         con.execute(sql)
@@ -50,7 +50,7 @@ def atualiJame(nome,novoNome):
     except Exception as erro:
         print(erro)
 
-def excluirJame(nome):
+def excluirjame(nome):
     try:
         sql = "delete from Jamegoes where jameg = '{}'".format(nome)
         con.execute(sql)
@@ -59,7 +59,7 @@ def excluirJame(nome):
     except Exception as erro:
         print(erro)
 
-def abrirPasta():
+def abripasta():
     print('\nBem-vindo ao seu diretorio!\n' +
             '\nEscolha um arquivo: ')
     arvo ='C:\\Users\\cristina.asubieta\\Documents\\' #'C:\\Users\\calve\\Documents'
