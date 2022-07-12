@@ -22,6 +22,15 @@ def inseriatal(nome):
         print("{} Inserido".format(con.rowcount))
     except Exception as erro:
             print(erro)
+    
+def consutodo():
+    try:
+        sql = 'select * from Jamegoes'
+        con.execute(sql)
+        for(jameg) in con:
+            print("Jameg: {}".format(jameg))
+    except Exception as erro:
+        print(erro)
 
 def consujame(nome):
     try:
