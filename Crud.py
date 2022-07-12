@@ -68,14 +68,29 @@ def excluirjame(nome):
     except Exception as erro:
         print(erro)
 
-def abripasta():
-    print('\nBem-vindo ao seu diretorio!\n' +
-            '\nEscolha um arquivo: ')
-    arvo ='C:\\Users\\cristina.asubieta\\Documents\\' #'C:\\Users\\calve\\Documents'
-    for (root, dirs, files) in os.walk(arvo):
-        print(root)
-        print(dirs)
-        print(files)
-        print('\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n')
+def abrirpasta():
+    arvo = 'C:\\Users\\calve\\Documents\\'
+    print('\nBem-vindo ao seu diretorio!\n')
+    for arvo, dirs, files in os.walk(arvo):
+        if not dirs:
+            print('A pasta: ', arvo, 'não possui subpastas')
+        else:
+            print('A pasta: ', arvo, 'possui as subpastas:')
+            for sub in dirs:
+                print('\t\t', sub)
+        if not files:
+            print('\t não possui arquivos')
+            print('\n*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n')
+        else:
+            print('\t e os arquivos: ')
+            for files in files:
+                print('\t\t', files)
 
+def pegarvo():
+    print('Por favor informe a subpasta e o nome do arquivo:')
+    atal = input()
+    inseriatal(atal)
+    Menu.executar()
 
+def joinfiles():
+    os.path.join('r', '' + arvo, 'r', '' + atal)
