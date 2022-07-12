@@ -6,8 +6,7 @@ this.opcao = -1
 def pegarvo():
     print('Por favor informe o caminho do arquivo ou pasta')
     atal = input()
-    Crud.InserirAtal(atal)
-    executar()
+    Crud.inseriatal(atal)
     
 
 #def jamegarfile(jameg=atal):
@@ -30,21 +29,27 @@ def executar():
     while(this.opcao != 0):
         menu()
         if this.opcao == 1:
+            Crud.abrirpasta()
+            pegarvo()
             print('Informe o nome do novo Jamego: ')
             jameg = input()
             Crud.inserijame(jameg)
         elif this.opcao == 2:
-            print('Informe o nome do Jamego que deseja consultar: ')
-            jameg = input()
-            Crud.consujame(jameg)
+            Crud.consutodo()
         elif this.opcao == 3:
-            print('Informe o nome que deseja atualizar: ')
+            print('Escolha uma Jamegão para editar')
+            Crud.consutodo()
             jameg = input()
-            Crud.atualijame(jameg)
+            print('Informe o novo nome do Jamegão')
+            novjame = input()
+            Crud.atualijame(novjame, jameg)
         elif this.opcao == 4:
             print('Simplesmente não :(')
             jameg = input()
             Crud.excluirjame(jameg)
         elif this.opcao == 5:
             Crud.abrirpasta()
-            pegArvo()
+            pegarvo()
+            print('Informe o nome do novo Jamego: ')
+            jameg = input()
+            Crud.inserijame(jameg)
