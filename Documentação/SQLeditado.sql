@@ -11,7 +11,7 @@ describe Jamegoes;
 
 create table Atalho(
 cod int not null auto_increment primary key,
-atal varchar(25) not null primary key
+atal varchar(50) not null primary key
 ) Engine = InnoDB;
 
 drop table Atalho;
