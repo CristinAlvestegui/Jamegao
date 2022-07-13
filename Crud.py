@@ -49,6 +49,37 @@ def consuatal(nome):
             print("jameg: {}".format(nome))
     except Exception as erro:
         print(erro)
+        
+def consujoin(nome):
+    try:
+        sql = "SELECT (atal) FROM Atalho WHERE jameg = '{}'".format(nome)
+        con.execute(sql)
+        for (atal) in con:
+            print('Atalho: {}'.format(atal))
+    except Exception as erro:
+        print(erro)
+
+def consuljoin2(nome):
+    try:
+        sql = "SELECT (atal), (jameg) as Jamegoes from Jamegoes"
+        sql2 = "inner join Atalho"
+        sql3 = "on cod_jameg = cod_atal"
+        con.execute(sql, sql2, sql3)
+        for (atal, jameg) in con:
+            print('Atalho: {} , JAmeg: {}'.format(atal, nome))
+    except Exception as erro:
+        print(erro)
+
+def consudois(nome):
+    try:
+        tentei = "SELECT Jamegoes.* , Atalho.* FROM Jamegoes FULL OUTER JOIN Jamegoes ON Jamegoes.jameg = Atalho.atal"
+        sql = "select * from Jamegoes where jameg = '{}'".format(nome)
+        sql2 = "select * from Atalho where atal = '{}'".format(nome)
+        con.execute(tentei)
+        for (nome, nome2) in con:
+            print("Jameg: {}" , "Atalho: {}".format(nome, nome2))
+    except Exception as erro:
+        print(erro)
 
 def atualijame(nome,novoNome):
     try:
