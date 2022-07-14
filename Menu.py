@@ -16,11 +16,12 @@ def pegarvo():
 
 def menu():
     print('\nEscolha umas das alternativas abaixo: \n\n' +
-        '1. Cadastrar Jamegão\n'                         +
-        '2. Consultar Jamegão\n'                         +
-        '3. Editar Jamegão\n'                            +
-        '4. Desativar Jamegão\n'                         +
-        '5. Escolher outro arquivo\n'                    +
+       '1. Cadastrar Jamegão\n'                         +
+        '2. Consultar Jamegões\n'                        +
+        '3. Consultar Atalhos\n'                         +
+        '4. Editar Jamegão\n'                            +
+        '5. Desativar Jamegão\n'                         +
+        '6. Escolher outro arquivo\n'                    +
         '0. Sair\n')
     this.opcao = int(input())
 
@@ -36,18 +37,30 @@ def executar():
             Crud.inserijame(jameg)
         elif this.opcao == 2:
             Crud.consutodo()
+            print('Escolha uma Jamegão consultar')
+            jameg = input()
+            Crud.consujoin(jameg)
         elif this.opcao == 3:
+            print('Qual atalho deseja abrir?')
+            Crud.consutodoatal()
+            print('Informe a pasta e Subpasta: ')
+            atal = input()
+            Crud.joinfiles(atal)
+            novjame = input()
+            Crud.atualijame(novjame, jameg)
+        elif this.opcao == 4:
             print('Escolha uma Jamegão para editar')
             Crud.consutodo()
             jameg = input()
             print('Informe o novo nome do Jamegão')
             novjame = input()
             Crud.atualijame(novjame, jameg)
-        elif this.opcao == 4:
-            print('Simplesmente não :(')
+        elif this.opcao == 5:
+            Crud.consutodo()
+            print('Escolha um Jamegão para desativar:')
             jameg = input()
             Crud.excluirjame(jameg)
-        elif this.opcao == 5:
+        elif this.opcao == 6:
             Crud.abrirpasta()
             pegarvo()
             print('Informe o nome do novo Jamego: ')
