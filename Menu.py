@@ -30,8 +30,6 @@ def executar():
     while(this.opcao != 0):
         menu()
         if this.opcao == 1:
-            Crud.abrirpasta()
-            pegarvo()
             print('Informe o nome do novo Jamego: ')
             jameg = input()
             Crud.inserijame(jameg)
