@@ -81,6 +81,15 @@ def consudois(nome):
             print("Jameg: {}" , "Atalho: {}".format(nome, nome2))
     except Exception as erro:
         print(erro)
+        
+ def consutodoatal():
+    try:
+        sql = 'select * from Atalho'
+        con.execute(sql)
+        for(atal) in con:
+            print("Atalhos: {}".format(atal))
+    except Exception as erro:
+        print(erro)
 
 def atualijame(nome,novoNome):
     try:
