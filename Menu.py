@@ -53,8 +53,6 @@ def executar():
             Crud.consutodo()
             jameg = input()
             print('Informe o novo nome do Jamegão')
-            novjame = input()
-            Crud.atualijame(novjame, jameg)
         elif this.opcao == 5:
             Crud.consutodo()
             print('Escolha um Jamegão para desativar:')
