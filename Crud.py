@@ -1,5 +1,6 @@
 import Dao
 import os
+import Menu
 
 
 db_connect = Dao.connection()
@@ -123,7 +124,7 @@ def pegarvo():
     inseriatal(atal)
     Menu.executar()
 
-def joinfiles():
+def joinfiles(atal):
     path = r'C:\Users\calve\Documents'
     cami = os.path.join(path, r'\Users\calve\Documents', atal)
     print(cami)
