@@ -124,4 +124,6 @@ def pegarvo():
     Menu.executar()
 
 def joinfiles():
-    os.path.join('r', '' + arvo, 'r', '' + atal)
+    path = r'C:\Users\calve\Documents'
+    cami = os.path.join(path, r'\Users\calve\Documents', atal)
+    print(cami)
