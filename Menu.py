@@ -16,7 +16,7 @@ def pegarvo():
 
 def menu():
     print('\nEscolha umas das alternativas abaixo: \n\n' +
-       '1. Cadastrar Jamegão\n'                         +
+        '1. Cadastrar Jamegão\n'                         +
         '2. Consultar Jamegões\n'                        +
         '3. Consultar Atalhos\n'                         +
         '4. Editar Jamegão\n'                            +
