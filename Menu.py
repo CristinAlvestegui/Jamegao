@@ -35,9 +35,6 @@ def executar():
             Crud.inserijame(jameg)
         elif this.opcao == 2:
             Crud.consutodo()
-            print('Escolha uma Jamegão consultar')
-            jameg = input()
-            Crud.consujoin(jameg)
         elif this.opcao == 3:
             print('Qual atalho deseja abrir?')
             Crud.consutodoatal()
